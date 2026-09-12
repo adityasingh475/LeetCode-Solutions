@@ -1,0 +1,22 @@
+class Solution {
+public:
+
+    void postorder(TreeNode* root, vector<int>& ans) {
+        if(root == NULL)
+            return;
+
+        postorder(root->left, ans);
+        postorder(root->right, ans);
+        ans.push_back(root->val);
+    }
+
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        postorder(root, ans);
+        return ans;
+    }
+};
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
