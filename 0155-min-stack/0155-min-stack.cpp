@@ -1,36 +1,24 @@
-#include <stack>
-#include <utility>
-#include <algorithm>
-
-using namespace std;
-
-class MinStack {
-private:
-    stack<pair<int, int>> st;
-
+class MinStack{
+    stack<pair<int,int>> st;
 public:
-    MinStack() {
-    }
-
-    void push(int val) {
-        if (st.empty()) {
-            st.push({val, val});
-        } else {
-            st.push({val, min(val, st.top().second)});
+    void push(int value){
+        if(st.empty()){
+            st.push({value,value});
         }
+        else{
+            st.push({value,min(value,st.top().second)});
+        }
+    }    
+    int getMin(){
+       return st.top().second;
+    }    
+    void pop(){
+       st.pop();
     }
-
-    void pop() {
-        st.pop();
+    int top(){
+       return st.top().first;
     }
-
-    int top() {
-        return st.top().first;
-    }
-
-    int getMin() {
-        return st.top().second;
-    }
+    
 };
 
 // Synced seamlessly with LeetHub Pro
