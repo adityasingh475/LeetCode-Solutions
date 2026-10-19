@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& nums, int target) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        vector <int> li;
+        for(int i=0;i<n;i++){
+            if(nums[i]==target){
+                li.push_back(i);
+            } 
+        }       
+         return li;
+        }            
+ };
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
